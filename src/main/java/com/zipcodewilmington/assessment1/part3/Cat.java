@@ -9,7 +9,6 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
     public Cat(String name, Integer age) {
-
     }
 
     /**
