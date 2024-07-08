@@ -86,14 +86,14 @@ public class MultiplesDeleter {
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
         int countDivisibleByMultiple = 0;
         for (int num : ints) {
-            if (num % multiple == 0) {
+            if (num % multiple != 0) {
                 countDivisibleByMultiple++;
             }
         }
         Integer[] divisibleByMultiple = new Integer[countDivisibleByMultiple];
         int index = 0;
         for (int num : ints) {
-            if (num % multiple == 0) {
+            if (num % multiple != 0) {
                 divisibleByMultiple[index++] = num;
             }
         }
