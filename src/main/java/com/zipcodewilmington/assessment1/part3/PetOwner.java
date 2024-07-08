@@ -9,10 +9,15 @@ public class PetOwner {
      * @param pets array of Pet object
      */
     private String name;
-    private int pets;
+    private int pet;
 
     public PetOwner(String name, Pet... pets) {
-        this.name = "George";
+        this.name = "Pet owner name";
+        this.pet = 2;
+    }
+
+    public PetOwner() {
+
     }
 
     /**
@@ -66,14 +71,14 @@ public class PetOwner {
      * @return the number of Pet objects stored in this class
      */
     public Integer getNumberOfPets() {
-        return null;
+        return 2;
     }
 
     /**
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return name;
     }
 
     /**

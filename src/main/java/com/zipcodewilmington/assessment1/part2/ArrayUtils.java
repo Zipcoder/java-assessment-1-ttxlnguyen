@@ -59,7 +59,14 @@ public class ArrayUtils {
      * @return an array containing all elements in `objectArray` and `objectArrayToAdd`
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
-    public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+    public static <Object> Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+        int length1 = objectArray.length;
+        int length2 = objectArrayToAdd.length;
+        int combinedLength = length1 + length2;
+        Object[] resultArray = Arrays.copyOf(objectArray, combinedLength);
+        System.arraycopy(objectArrayToAdd, 0, resultArray, length1, length2);
+
+        return resultArray;
+//        return null;
     }
 }
