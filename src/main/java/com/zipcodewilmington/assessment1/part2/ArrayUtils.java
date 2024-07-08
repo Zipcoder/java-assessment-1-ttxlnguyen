@@ -20,7 +20,6 @@ public class ArrayUtils {
             }
         }
         return counter;
-//        return null;
     }
 
     /**
@@ -43,16 +42,15 @@ public class ArrayUtils {
         for (Object obj : objectArray) {
             countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
         }
-        java.lang.Object mostFrequentObject = null;
+        java.lang.Object mCommonObject = null;
         int maxCount = 0;
         for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
             if (entry.getValue() > maxCount) {
                 maxCount = entry.getValue();
-                mostFrequentObject = entry.getKey();
+                mCommonObject = entry.getKey();
             }
         }
-        return (Object) mostFrequentObject;
-//        return null;
+        return (Object) mCommonObject;
     }
 
 
@@ -63,19 +61,18 @@ public class ArrayUtils {
      */
     public static Object getLeastCommon(Object[] objectArray) {
         Map<Object, Integer> countMap = new HashMap<>();
-
         for (Object obj : objectArray) {
             countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
         }
-        Object leastFrequentObject = null;
+        Object lCommonObject = null;
         int minCount = Integer.MAX_VALUE;
         for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
             if (entry.getValue() < minCount) {
                 minCount = entry.getValue();
-                leastFrequentObject = entry.getKey();
+                lCommonObject = entry.getKey();
             }
         }
-        return (Object)leastFrequentObject;
+        return (Object)lCommonObject;
     }
 
     /**
@@ -90,7 +87,6 @@ public class ArrayUtils {
         int combinedLength = length1 + length2;
         Object[] resultArray = Arrays.copyOf(objectArray, combinedLength);
         System.arraycopy(objectArrayToAdd, 0, resultArray, length1, length2);
-
         return resultArray;
     }
 }

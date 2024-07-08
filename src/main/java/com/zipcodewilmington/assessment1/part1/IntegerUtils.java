@@ -16,7 +16,6 @@ public class IntegerUtils {
             sum += i;
         }
         return sum;
-//        return null;
     }
 
     /**
@@ -29,7 +28,6 @@ public class IntegerUtils {
             sum *= i;
         }
         return sum;
-//        return null;
     }
 
     /**

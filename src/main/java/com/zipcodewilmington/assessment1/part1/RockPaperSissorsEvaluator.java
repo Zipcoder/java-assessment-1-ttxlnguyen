@@ -28,7 +28,6 @@ public class RockPaperSissorsEvaluator {
         }
 
         return winningSign;
-//        return null;
     }
 
     /**
@@ -51,7 +50,6 @@ public class RockPaperSissorsEvaluator {
         }
 
         return losingSign;
-//        return null;
     }
 
     /**
@@ -60,14 +58,6 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        String determine = "";
-
-        switch (handSignOfPlayer1) {
-            case "rock":
-                determine = "rock";
-        }
-
-        return determine;
-//        return null;
+        return null;
     }
 }

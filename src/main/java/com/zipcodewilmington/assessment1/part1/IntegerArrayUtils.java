@@ -14,7 +14,6 @@ public class IntegerArrayUtils {
             sum += num;
         }
         return sum;
-//        return null;
     }
 
     /**
@@ -27,7 +26,6 @@ public class IntegerArrayUtils {
             product *= i;
         }
         return product;
-//        return null;
     }
 
     /**
@@ -40,6 +38,5 @@ public class IntegerArrayUtils {
             sum += num;
         }
         return sum / intArray.length;
-//        return null;
     }
 }

@@ -10,7 +10,6 @@ public class BasicStringUtils {
      */
     public static String camelCase(String str) {
         return Character.toUpperCase(str.charAt(0)) + str.substring(1);
-//        return null;
     }
 
     /**
@@ -22,7 +21,6 @@ public class BasicStringUtils {
         String reverse = new StringBuffer(string).reverse().toString();
         new StringBuilder(str).reverse().toString();
         return reverse;
-//        return null;
     }
 
     /**
@@ -34,7 +32,6 @@ public class BasicStringUtils {
         String reverse = new StringBuffer(string).reverse().toString();
         new StringBuilder(str).reverse().toString();
         return Character.toUpperCase(reverse.charAt(0)) + reverse.substring(1);
-//        return null;
     }
 
 
@@ -44,7 +41,6 @@ public class BasicStringUtils {
      */
     public static String removeFirstAndLastCharacter(String str) {
         return str.substring(1, str.length() - 1);
-//        return null;
     }
 
     /**
@@ -53,8 +49,7 @@ public class BasicStringUtils {
      */
     public static String invertCasing(String str) {
         char[] characters = str.toCharArray();
-        for (int i = 0; i < characters.length; i++)
-        {
+        for (int i = 0; i < characters.length; i++) {
             char c = characters[i];
             if (Character.isUpperCase(c)) {
                 characters[i] = Character.toLowerCase(c);
@@ -63,6 +58,5 @@ public class BasicStringUtils {
             }
         }
         return new String(characters);
-//        return null;
     }
 }
