@@ -2,6 +2,8 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by leon on 2/16/18.
@@ -31,6 +33,8 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
+
+
         return null;
     }
 
@@ -40,7 +44,20 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        return null;
+        Map<Object, Integer> countMap = new HashMap<>();
+        for (Object obj : objectArray) {
+            countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
+        }
+        java.lang.Object mostFrequentObject = null;
+        int maxCount = 0;
+        for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mostFrequentObject = entry.getKey();
+            }
+        }
+        return (Object) mostFrequentObject;
+//        return null;
     }
 
 
@@ -50,7 +67,22 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Map<Object, Integer> countMap = new HashMap<>();
+
+        for (Object obj : objectArray) {
+            countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
+        }
+        Object leastFrequentObject = null;
+        int minCount = Integer.MAX_VALUE; // Start with a high value
+
+        for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() < minCount) {
+                minCount = entry.getValue();
+                leastFrequentObject = entry.getKey();
+            }
+        }
+        return (Object) leastFrequentObject;
+//        return null;
     }
 
     /**
@@ -59,7 +91,7 @@ public class ArrayUtils {
      * @return an array containing all elements in `objectArray` and `objectArrayToAdd`
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
-    public static <Object> Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+    public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
         int length1 = objectArray.length;
         int length2 = objectArrayToAdd.length;
         int combinedLength = length1 + length2;
