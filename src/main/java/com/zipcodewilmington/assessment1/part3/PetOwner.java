@@ -8,7 +8,11 @@ public class PetOwner {
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
+    private String name;
+    private int pets;
+
     public PetOwner(String name, Pet... pets) {
+        this.name = "George";
     }
 
     /**
