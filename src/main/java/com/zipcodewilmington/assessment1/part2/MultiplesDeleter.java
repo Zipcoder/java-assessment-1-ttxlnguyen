@@ -27,7 +27,6 @@ public class MultiplesDeleter {
             }
         }
         return odds;
-//        return null;
     }
 
     /**
@@ -50,7 +49,6 @@ public class MultiplesDeleter {
             }
         }
         return evens;
-//        return null;
     }
 
     /**
@@ -59,22 +57,21 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        int countDivisibleByThree = 0;
+        int numDivisibleByThree = 0;
         for (int num : ints) {
             if (num % 3 == 0) {
-                countDivisibleByThree++;
+                numDivisibleByThree++;
             }
         }
-        Integer[] divisibleByThree = new Integer[countDivisibleByThree];
+        Integer[] divisibleByThree = new Integer[numDivisibleByThree];
         int index = 0;
-
         for (int num : ints) {
             if (num % 3 == 0) {
                 divisibleByThree[index++] = num+1;
             }
         }
         return divisibleByThree;
-//        return null;
+
     }
 
     /**
@@ -84,13 +81,13 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        int countDivisibleByMultiple = 0;
+        int numDivisibleByMultiple = 0;
         for (int num : ints) {
             if (num % multiple != 0) {
-                countDivisibleByMultiple++;
+                numDivisibleByMultiple++;
             }
         }
-        Integer[] divisibleByMultiple = new Integer[countDivisibleByMultiple];
+        Integer[] divisibleByMultiple = new Integer[numDivisibleByMultiple];
         int index = 0;
         for (int num : ints) {
             if (num % multiple != 0) {
@@ -98,6 +95,6 @@ public class MultiplesDeleter {
             }
         }
         return divisibleByMultiple;
-//        return null;
+
     }
 }

@@ -1,9 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by leon on 2/16/18.
@@ -33,7 +30,6 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-
         return null;
     }
 
@@ -72,16 +68,14 @@ public class ArrayUtils {
             countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
         }
         Object leastFrequentObject = null;
-        int minCount = Integer.MAX_VALUE; // Start with a high value
-
+        int minCount = Integer.MAX_VALUE;
         for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
             if (entry.getValue() < minCount) {
                 minCount = entry.getValue();
                 leastFrequentObject = entry.getKey();
             }
         }
-        return (Object) leastFrequentObject;
-//        return null;
+        return (Object)leastFrequentObject;
     }
 
     /**
@@ -98,6 +92,5 @@ public class ArrayUtils {
         System.arraycopy(objectArrayToAdd, 0, resultArray, length1, length2);
 
         return resultArray;
-//        return null;
     }
 }
