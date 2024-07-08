@@ -34,7 +34,6 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
 
-
         return null;
     }
 
