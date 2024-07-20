@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.*;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -11,7 +13,13 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        int counter = 0;
+        for (int i = 0; i < objectArray.length; i++){
+            if (objectArray[i].equals(objectToCount)){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /**
@@ -30,7 +38,19 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        return null;
+        Map<Object, Integer> countMap = new HashMap<>();
+        for (Object obj : objectArray) {
+            countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
+        }
+        java.lang.Object mCommonObject = null;
+        int maxCount = 0;
+        for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mCommonObject = entry.getKey();
+            }
+        }
+        return (Object) mCommonObject;
     }
 
 
@@ -40,7 +60,19 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Map<Object, Integer> countMap = new HashMap<>();
+        for (Object obj : objectArray) {
+            countMap.put(obj, countMap.getOrDefault(obj, 0) + 1);
+        }
+        Object lCommonObject = null;
+        int minCount = Integer.MAX_VALUE;
+        for (Map.Entry<Object, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() < minCount) {
+                minCount = entry.getValue();
+                lCommonObject = entry.getKey();
+            }
+        }
+        return (Object)lCommonObject;
     }
 
     /**
@@ -50,6 +82,11 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+        int length1 = objectArray.length;
+        int length2 = objectArrayToAdd.length;
+        int combinedLength = length1 + length2;
+        Object[] resultArray = Arrays.copyOf(objectArray, combinedLength);
+        System.arraycopy(objectArrayToAdd, 0, resultArray, length1, length2);
+        return resultArray;
     }
 }
