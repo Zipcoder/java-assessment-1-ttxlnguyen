@@ -36,7 +36,7 @@ public class Dog extends Pet {
      * age is 0
      */
     public Dog() {
-        super("Dog name", 0);
+        super("Dog name");
     }
 
     /**
